@@ -1,0 +1,14 @@
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Url</th>
+    <th>Created At</th>
+    <th>Author</th>
+  </tr>
+  <tr *ngFor="let hit of hits; let i = index" (click)="rowClicked(i)">
+    <td>{{hit.title}}</td>
+    <td>{{hit.url}}</td>
+    <td>{{hit.created_at}}</td>
+    <td>{{hit.author}}</td>
+  </tr>
+</table>
