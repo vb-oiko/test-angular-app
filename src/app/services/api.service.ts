@@ -16,7 +16,6 @@ export class ApiService {
 
     return this._http.get(this._API_URL)
       .pipe(
-        
         map(o => {
           return o['hits'];
         })

@@ -10,24 +10,31 @@ export class WorkplaceComponent implements OnInit {
 
   constructor(private _api: ApiService) { }
   hits=[];
+  curHit = undefined;
+
+  getData(){
+    this._api.getData().subscribe(
+      hits => {
+        this.hits = hits;
+      },
+      err => {
+        console.log('API error ', err);
+      }
+    );
+  };
 
   ngOnInit() {
-    // timer = setInterval(()=>{
-      this._api.getData().subscribe(
-        hits => {
-          this.hits = hits;
-        },
-        err => {
-          console.log('API error ', err);
-          
-        }
-      );
-
-    // }, 1000);
+    this.getData();
+    setInterval(()=>{
+      this.getData();
+    }, 10000);
   }
 
   rowClicked(i){
-    console.log(this.hits[i]);
-    
+    this.curHit = this.hits[i];
+  };
+
+  closeModal(){
+    this.curHit = undefined;
   };
 }

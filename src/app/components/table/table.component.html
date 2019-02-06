@@ -1,4 +1,4 @@
-<table>
+<table *ngIf="hits.length; else loading">
   <tr>
     <th>Title</th>
     <th>Url</th>
@@ -12,3 +12,5 @@
     <td>{{hit.author}}</td>
   </tr>
 </table>
+
+<ng-template #loading>Loading ...</ng-template>

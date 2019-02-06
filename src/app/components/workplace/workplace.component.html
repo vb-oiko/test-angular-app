@@ -1,2 +1,2 @@
 <app-table [hits]="hits" (rowClick)="rowClicked($event)"></app-table>
-<app-modal></app-modal>
+<app-modal [hit]="curHit" (btnCloseClickEvent)="closeModal()"></app-modal>

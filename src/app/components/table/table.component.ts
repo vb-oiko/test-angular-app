@@ -19,6 +19,4 @@ export class TableComponent implements OnInit {
   rowClicked (i) {
     this.rowClick.emit(i);
   };
-
-  
 }

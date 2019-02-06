@@ -1,3 +1,8 @@
-<p>
-  modal works!
-</p>
+<div *ngIf="hit" class="app-modal__overlay">
+  <div class="app-modal__wrap">
+    <div class="app-modal__content">
+        <pre>{{hit | json}}</pre>
+    </div>
+    <button class="app-modal__btn" (click)="btnClicked()">Cancel</button>
+  </div>
+</div>
